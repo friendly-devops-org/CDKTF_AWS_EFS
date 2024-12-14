@@ -2,6 +2,7 @@ import { Construct } from 'constructs';
 import { AwsStackBase, BaseStackProps } from './stackbase';
 import { EfsFileSystem } from '@cdktf/provider-aws/lib/efs-file-system';
 import { EfsAccessPoint } from '@cdktf/provider-aws/lib/efs-access-point';
+import { EfsMountTarget } from '@cdktf/provider-aws/lib/efs-mount-target';
 import { KmsKey } from '@cdktf/provider-aws/lib/kms-key';
 
 export interface EfsConfigs extends BaseStackProps {
@@ -33,6 +34,11 @@ export class efsStack extends AwsStackBase {
             tags: {
                 Name: `${props.name}-${props.project}-efs`,
             }
+        })
+
+        const mountTarget = new EfsMountTarget(this, `${props.name}-mount-target`, {
+            fileSystemId: this.efs.id,
+            subnetId: `${process.env.SUBNET}`
         })
 
         this.efsAp = new EfsAccessPoint (this, `${props.name}-efsAP`, {
