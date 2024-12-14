@@ -9,6 +9,7 @@ export interface EfsConfigs extends BaseStackProps {
     name: string,
     project: string,
     region: string,
+    securityGroups: string[],
 }
 
 export class efsStack extends AwsStackBase {
@@ -44,6 +45,7 @@ export class efsStack extends AwsStackBase {
 
         this.efsAp = new EfsAccessPoint (this, `${props.name}-efsAP`, {
             fileSystemId: this.efs.id
+            securityGroups: props.securityGroups,
         })
     }
 }

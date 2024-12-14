@@ -14,6 +14,12 @@ export class sgStack extends AwsStackBase {
             name: props.name,
             ingress: [
                 {
+                    protocol: "-1",
+                    fromPort: 0,
+                    toPort: 0,
+                    self:
+                },
+                {
                     protocol: "TCP",
                     fromPort: 80,
                     toPort: 80,
