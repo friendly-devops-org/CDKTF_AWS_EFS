@@ -10,7 +10,7 @@ import { AutoScalingStack, AutoScalingConfigs } from './lib/stacks/autoscaling-s
 import { AppAutoScalingStack, AppAutoScalingConfigs } from './lib/stacks/application-as-stack';
 import { sgStack } from './lib/stacks/securitygroup-stack';
 import { Route53Stack, RouteConfigs } from './lib/stacks/route53-stack';
-//import { efsStack, EfsConfigs } from './lib/stacks/efs-stack';
+import { efsStack, EfsConfigs } from './lib/stacks/efs-stack';
 
 const StackProps: BaseStackProps = {
     name: "nextcloud",
