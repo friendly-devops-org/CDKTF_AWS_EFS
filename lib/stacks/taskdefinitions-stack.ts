@@ -116,7 +116,7 @@ export class taskDefinitionStack extends AwsStackBase {
             containerDefinitions: Fn.jsonencode([
               {
                 name: "client",
-                image: "nextcloud:stable",
+                image: "nextcloud:latest",
                 essential: true,
                 portMappings: [
                   {
