@@ -46,6 +46,7 @@ export class LoadBalancerStack extends AwsStackBase {
             path: "/ocs/v2.php/apps/serverinfo/api/v1/info",
             healthyThreshold: 3,
             unhealthyThreshold: 3,
+            matcher: "200-499",
             timeout: 30,
             interval: 60,
             protocol: "HTTP",
