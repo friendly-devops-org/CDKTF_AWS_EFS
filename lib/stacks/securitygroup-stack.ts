@@ -17,7 +17,7 @@ export class sgStack extends AwsStackBase {
                     protocol: "-1",
                     fromPort: 0,
                     toPort: 0,
-                    selfAttribute: true,
+                    selfAttribute: true
                 },
                 {
                     protocol: "TCP",

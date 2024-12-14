@@ -40,12 +40,12 @@ export class efsStack extends AwsStackBase {
 
         this.mountTarget = new EfsMountTarget(this, `${props.name}-mount-target`, {
             fileSystemId: this.efs.id,
-            subnetId: `${process.env.SUBNET}`
+            subnetId: `${process.env.SUBNET}`,
+            securityGroups: props.securityGroups,
         })
 
         this.efsAp = new EfsAccessPoint (this, `${props.name}-efsAP`, {
             fileSystemId: this.efs.id
-            securityGroups: props.securityGroups,
         })
     }
 }
