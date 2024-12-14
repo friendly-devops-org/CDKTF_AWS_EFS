@@ -77,7 +77,7 @@ const AsgConfig: AutoScalingConfigs = {
     name: StackProps.name,
     project: StackProps.project,
     region: StackProps.region,
-    desiredCapacity: 1,
+    desiredCapacity: 2,
     minSize: 1,
     maxSize: 3,
     launchTemplate: {
