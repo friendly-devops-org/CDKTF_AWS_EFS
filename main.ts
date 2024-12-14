@@ -32,22 +32,22 @@ const db = new dbStack(app, "db-stack", StackProps);
 const clusterName = `${StackProps.name}-${StackProps.project}-cluster`;
 aFile(clusterName);
 
-/*const EfsConfig: EfsConfigs = {
+const EfsConfig: EfsConfigs = {
     name: StackProps.name,
     project: StackProps.project,
     region: StackProps.region,
 }
 
 const EfsTarget = new efsStack(app, "efs-stack", EfsConfig)
-*/
+
 const DbConfig: DbConfigs = {
     name: StackProps.name,
     project: StackProps.project,
     region: StackProps.region,
     dbAddress: db.db.address,
     dbName: db.db.dbName,
-//    fileSystemId: EfsTarget.efs.id,
-//    accessPointId: EfsTarget.efsAp.id,
+    fileSystemId: EfsTarget.efs.id,
+    accessPointId: EfsTarget.efsAp.id,
 
 }
 
