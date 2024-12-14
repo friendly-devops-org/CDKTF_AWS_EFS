@@ -43,7 +43,7 @@ export class LoadBalancerStack extends AwsStackBase {
 
           healthCheck: {
             enabled: true,
-            path: "/login",
+            path: "/ocs/v2.php/apps/serverinfo/api/v1/info",
             healthyThreshold: 3,
             unhealthyThreshold: 3,
             timeout: 30,
