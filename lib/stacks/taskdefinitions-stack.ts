@@ -134,13 +134,13 @@ export class taskDefinitionStack extends AwsStackBase {
                       "awslogs-stream-prefix": props.name,
                     },
                 },
-                mountPoints: [
+/*                mountPoints: [
                     {
                         sourceVolume: `${props.name}-efs-volume`,
                         containerPath: "/var/www/html",
                         readOnly: false
                     }
-                ],
+                ],*/
                 environment: [
                   {
                     name: "NAME",
@@ -165,7 +165,7 @@ export class taskDefinitionStack extends AwsStackBase {
                 ]
               }
             ]),
-            volume: [
+/*            volume: [
                 {
                     name: `${props.name}-efs-volume`,
                     efsVolumeConfiguration: {
@@ -178,7 +178,7 @@ export class taskDefinitionStack extends AwsStackBase {
                         }
                     }
                 }
-            ]
+            ]*/
         })
     }
 }
