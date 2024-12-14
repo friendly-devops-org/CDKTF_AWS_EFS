@@ -36,13 +36,19 @@ export class sgStack extends AwsStackBase {
             ],
             egress: [
               // allow all traffic to every destination
-              {
-                fromPort: 0,
-                toPort: 0,
-                protocol: "-1",
-                cidrBlocks: ["0.0.0.0/0"],
-                ipv6CidrBlocks: ["::/0"],
-              },
+                {
+                  fromPort: 0,
+                  toPort: 0,
+                  protocol: "-1",
+                  cidrBlocks: ["0.0.0.0/0"],
+                  ipv6CidrBlocks: ["::/0"],
+                },
+                {
+                    protocol: "-1",
+                    fromPort: 0,
+                    toPort: 0,
+                    selfAttribute: true
+                },
             ],
         });
     }
