@@ -137,7 +137,7 @@ export class taskDefinitionStack extends AwsStackBase {
                 mountPoints: [
                     {
                         sourceVolume: `${props.name}-efs-volume`,
-                        containerPath: "/var/www/html/data",
+                        containerPath: "/var/www/html",
                         readOnly: false
                     }
                 ],
