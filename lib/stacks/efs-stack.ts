@@ -14,7 +14,7 @@ export interface EfsConfigs extends BaseStackProps {
 export class efsStack extends AwsStackBase {
     public efsAp: EfsAccessPoint;
     public efs: EfsFileSystem;
-    private mountTarget: EfsMountTarget;
+    public mountTarget: EfsMountTarget;
     constructor(scope: Construct, id: string, props: EfsConfigs) {
         super(scope,  `${props.name}-${id}`, {
             name: `${props.name}`,
