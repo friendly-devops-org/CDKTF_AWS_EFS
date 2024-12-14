@@ -171,7 +171,6 @@ export class taskDefinitionStack extends AwsStackBase {
                     efsVolumeConfiguration: {
                         fileSystemId: `${props.fileSystemId}`,
                         transitEncryption: "ENABLED",
-                        transitEncryptionPort: 5129,
                         authorizationConfig: {
                            accessPointId: `${props.accessPointId}`,
                            iam: "ENABLED", 
