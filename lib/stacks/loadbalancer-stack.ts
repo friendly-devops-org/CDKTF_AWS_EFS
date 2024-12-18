@@ -51,7 +51,7 @@ export class LoadBalancerStack extends AwsStackBase {
           }
         })
 
-        lbl = new AlbListener(this, `${props.name}-listener`, {
+        new AlbListener(this, `${props.name}-listener`, {
           loadBalancerArn: this.lb.arn,
           port: 80,
           protocol: "HTTP",
@@ -70,7 +70,7 @@ export class LoadBalancerStack extends AwsStackBase {
           ],
         })
 
-        lblSecure = new AlbListener(this, `${props.name}-secure-listener`, {
+        new AlbListener(this, `${props.name}-secure-listener`, {
           loadBalancerArn: this.lb.arn,
           port: 443,
           protocol: "HTTPS",
