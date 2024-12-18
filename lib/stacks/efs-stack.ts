@@ -15,7 +15,6 @@ export interface EfsConfigs extends BaseStackProps {
 export class efsStack extends AwsStackBase {
     public efsAp: EfsAccessPoint;
     public efs: EfsFileSystem;
-    public mountTarget: EfsMountTarget;
     constructor(scope: Construct, id: string, props: EfsConfigs) {
         super(scope,  `${props.name}-${id}`, {
             name: `${props.name}`,
@@ -38,7 +37,7 @@ export class efsStack extends AwsStackBase {
             }
         })
 
-        this.mountTarget = new EfsMountTarget(this, `${props.name}-mount-target`, {
+        mountTarget = new EfsMountTarget(this, `${props.name}-mount-target`, {
             fileSystemId: this.efs.id,
             subnetId: `${process.env.SUBNET}`,
             securityGroups: props.securityGroups,
